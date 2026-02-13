@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { useScrollAnimation, scrollAnimationClasses } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import AutoCarousel from "./AutoCarousel";
@@ -8,28 +8,46 @@ import AnimatedLines from "./AnimatedLines";
 
 const projects = [
   {
-    title: "Food Delivery Platform",
-    description: "Microservices architecture with React frontend and Node.js backend. Containerized with Docker and Kubernetes, featuring CI/CD pipeline with Jenkins.",
-    tech: ["React", "Node.js", "Docker", "Kubernetes", "Jenkins"],
+    title: "Train Booking System",
+    description: "A full-featured train reservation system built with Java, handling seat booking, cancellations, and real-time availability tracking.",
+    tech: ["Java", "Backend", "Booking System"],
     image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
+    github: "https://github.com/Shatakshi-gupta-ggits/train-booking",
   },
   {
-    title: "Enterprise Journal System",
-    description: "Secure enterprise application with Spring Security, JWT authentication, and role-based access control. RESTful APIs with 90%+ test coverage.",
-    tech: ["Spring Boot", "MySQL", "REST API", "JUnit"],
+    title: "Arogya Vaani",
+    description: "A healthcare-focused TypeScript application designed to improve health accessibility and patient communication.",
+    tech: ["TypeScript", "Healthcare", "Web App"],
     image: "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png",
+    github: "https://github.com/Shatakshi-gupta-ggits/arogya-vaani",
   },
   {
-    title: "AI Analytics Dashboard",
-    description: "Automated data visualization platform with AI-driven insights using OpenAI GPT. Containerized microservices achieving 95% uptime.",
-    tech: ["Python", "FastAPI", "OpenAI", "PostgreSQL", "Docker"],
+    title: "File Format Converter Pro",
+    description: "Convert multiple image files (PNG, JPG, JPEG, etc.) into any format. Built with React and TypeScript for seamless file conversion.",
+    tech: ["React", "TypeScript", "File Converter"],
     image: "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png",
+    github: "https://github.com/Shatakshi-gupta-ggits/file-formate-converter-pro",
   },
   {
-    title: "TriNetra AI - Money Laundering Detection",
-    description: "National CyberShield Hackathon Winner 2025. Visual rule-based detection system using Graph Neural Networks with interactive D3.js dashboard.",
-    tech: ["GNN", "D3.js", "WebGL", "Real-time Analytics"],
+    title: "AirBnb Lite",
+    description: "A lightweight clone of AirBnb with property listings, search functionality, and booking features built with JavaScript.",
+    tech: ["JavaScript", "Web App", "Clone"],
     image: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
+    github: "https://github.com/Shatakshi-gupta-ggits/AirBnb-lite",
+  },
+  {
+    title: "Seam to Door",
+    description: "A TypeScript-based web application for seamless door-to-door service management and delivery tracking.",
+    tech: ["TypeScript", "Web App", "Service Platform"],
+    image: "/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png",
+    github: "https://github.com/Shatakshi-gupta-ggits/seam-to-door",
+  },
+  {
+    title: "Ekart",
+    description: "A full-featured e-commerce platform with product listings, cart management, and checkout functionality.",
+    tech: ["JavaScript", "E-commerce", "Web App"],
+    image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
+    github: "https://github.com/Shatakshi-gupta-ggits/Ekart",
   },
 ];
 
@@ -77,19 +95,14 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
         </div>
         <div className="flex gap-3">
           <Button 
+            asChild
             className="flex-1 bg-pulse-500 hover:bg-pulse-600 text-white transition-all duration-300 hover:scale-105"
             size="lg"
           >
-            <ExternalLink className="w-4 h-4 mr-2" />
-            View Live
-          </Button>
-          <Button 
-            variant="outline"
-            className="flex-1 border-pulse-500 text-pulse-500 hover:bg-pulse-50 dark:hover:bg-pulse-900/30 transition-all duration-300 hover:scale-105"
-            size="lg"
-          >
-            <Github className="w-4 h-4 mr-2" />
-            Code
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              <Github className="w-4 h-4 mr-2" />
+              View Code
+            </a>
           </Button>
         </div>
       </div>
